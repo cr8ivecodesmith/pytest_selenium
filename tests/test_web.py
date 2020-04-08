@@ -1,12 +1,19 @@
+from pathlib import Path
+
 import pytest
 
-from selenium.webdriver import Firefox
+from selenium.webdriver import Chrome
 from selenium.webdriver.common.keys import Keys
+
+
+SCRIPT_PATH = Path(__file__).resolve().parent
+PROJECT_PATH = SCRIPT_PATH.parent
+CHROMEDRIVER = PROJECT_PATH.joinpath('chromedriver')
 
 
 @pytest.fixture
 def browser():
-    driver = Firefox()
+    driver = Chrome(executable_path=CHROMEDRIVER)
 
     driver.implicitly_wait(10)
 
