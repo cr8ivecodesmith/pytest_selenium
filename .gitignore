@@ -1,0 +1,8 @@
+*.py[cod]
+*.log
+*.swp
+*.*~
+__pycache__
+.pytest_cache
+*.zip
+chromedriver
